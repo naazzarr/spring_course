@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!--/*/ <th:block th:insert="~{fragments/headerinc :: head}"></th:block> /*/-->
+</head>
+<body>
+<!--/*/ <th:block th:insert="~{fragments/header :: header}"></th:block> /*/-->
+<div class="container-fluid">
+    <h2 th:text="${title}">User Form</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-4">
+                <form th:object="${user}" th:action="@{/users/save}" method="post">
+                    <input type="hidden" th:field="*{id}"/>
+                    <div class="form-group">
+                        <input type="text" th:field="*{username}" th:errorclass="invalid-feedback-input" class="form-control" placeholder="Username" />
+                        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:errorclass="invalid-feedback">Username is invalid</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" th:field="*{password}" class="form-control" placeholder="Password" />
+                    </div>
+                    <div class="form-group">
+                        <select th:field="*{role}" class="form-control">
+                            <option value="USER">USER</option>
+                            <option value="ADMIN">ADMIN</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
