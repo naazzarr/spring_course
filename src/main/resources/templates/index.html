@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--/*/ <th:block th:insert="~{fragments/headerinc :: head}"></th:block> /*/-->
+</head>
+<body>
+<!--/*/ <th:block th:insert="~{fragments/header :: header}"></th:block> /*/-->
+<div class="container-fluid text-center">
+    <h1 class="display-4 mt-5">Welcome to the Student Management System</h1>
+    <p class="lead">Manage students, courses, and more!</p>
+
+    <div class="row mt-5">
+        <!-- Перша кнопка -->
+        <div class="col-12 mb-6">
+            <a href="/students" class="btn btn-primary btn-lg w-100">
+                <i class="fa fa-users"></i> Manage Students
+            </a>
+            <p>View and edit student information, enroll students in courses.</p>
+        </div>
+
+        <!-- Друга кнопка -->
+        <div class="col-12 mb-6">
+            <a href="/courses" class="btn btn-success btn-lg w-100">
+                <i class="fa fa-book"></i> Manage Courses
+            </a>
+            <p>Create, edit, and assign courses to students.</p>
+        </div>
+
+        <!-- Третя кнопка -->
+        <div class="col-12 mb-6">
+            <a href="/users" class="btn btn-info btn-lg w-100">
+                <i class="fa fa-chart-bar"></i> Manage Users
+            </a>
+            <p>View and edit users information</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -21,7 +21,9 @@
             <td class="col-actions">
                 <a th:href="@{/users/{id}(id=${user.id})}" class="btn btn-default"><i class="fa fa-eye"></i> Show</a>
                 <a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
-                <a th:href="@{/users/delete/{id}(id=${user.id})}" onclick="return confirm('Are you sure you want to remove?')" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                <form th:action="@{/users/delete/{id}(id=${user.id})}" method="post" style="display:inline;">
+                    <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to remove?')" />
+                </form>
             </td>
         </tr>
     </table>
